@@ -40,6 +40,7 @@ function App() {
     isFetching,
     error,
     fetchedData: userPlaces,
+    setFetchedData: setUserPlaces,
   } = useFetch(fetchUserPlaces, []);
 
   function handleStartRemovePlace(place) {
@@ -95,7 +96,7 @@ function App() {
 
       setModalIsOpen(false);
     },
-    [userPlaces]
+    [userPlaces, setUserPlaces]
   );
 
   function handleError() {
